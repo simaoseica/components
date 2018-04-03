@@ -10,7 +10,7 @@
 		11D07CD72073BCDB006F06EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07CD62073BCDB006F06EA /* AppDelegate.swift */; };
 		11D07CDE2073BCDD006F06EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D07CDD2073BCDD006F06EA /* Assets.xcassets */; };
 		11D07CE12073BCDD006F06EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D07CDF2073BCDD006F06EA /* LaunchScreen.storyboard */; };
-		11D07CEC2073BCDD006F06EA /* ComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07CEB2073BCDD006F06EA /* ComponentTests.swift */; };
+		11D07CEC2073BCDD006F06EA /* ConcreteComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07CEB2073BCDD006F06EA /* ConcreteComponentTests.swift */; };
 		11D07CF72073BCDD006F06EA /* ComponentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07CF62073BCDD006F06EA /* ComponentUITests.swift */; };
 		11D07D0B2073C0B4006F06EA /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07D052073C0B4006F06EA /* DataSource.swift */; };
 		11D07D0C2073C0B4006F06EA /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07D052073C0B4006F06EA /* DataSource.swift */; };
@@ -58,7 +58,7 @@
 		11D07CE02073BCDD006F06EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11D07CE22073BCDD006F06EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11D07CE72073BCDD006F06EA /* ComponentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComponentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		11D07CEB2073BCDD006F06EA /* ComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTests.swift; sourceTree = "<group>"; };
+		11D07CEB2073BCDD006F06EA /* ConcreteComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteComponentTests.swift; sourceTree = "<group>"; };
 		11D07CED2073BCDD006F06EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11D07CF22073BCDD006F06EA /* ComponentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComponentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D07CF62073BCDD006F06EA /* ComponentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentUITests.swift; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 		11D07CEA2073BCDD006F06EA /* ComponentTests */ = {
 			isa = PBXGroup;
 			children = (
-				11D07CEB2073BCDD006F06EA /* ComponentTests.swift */,
+				11D07CEB2073BCDD006F06EA /* ConcreteComponentTests.swift */,
 				11D07CED2073BCDD006F06EA /* Info.plist */,
 			);
 			path = ComponentTests;
@@ -558,7 +558,7 @@
 				11D07D122073C0B4006F06EA /* ConcreteComponent.swift in Sources */,
 				11D07D0C2073C0B4006F06EA /* DataSource.swift in Sources */,
 				11D07D0F2073C0B4006F06EA /* ConcreteViewController.swift in Sources */,
-				11D07CEC2073BCDD006F06EA /* ComponentTests.swift in Sources */,
+				11D07CEC2073BCDD006F06EA /* ConcreteComponentTests.swift in Sources */,
 				11D07D152073C0B4006F06EA /* Component.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -257,6 +257,7 @@
 				F9A9FDFD2ED5D7B96274987E /* [CP] Check Pods Manifest.lock */,
 				11D07CCF2073BCDB006F06EA /* Sources */,
 				11D07CD02073BCDB006F06EA /* Frameworks */,
+				D0AC91662073DB510073747E /* Create components Visual Reference */,
 				11D07CD12073BCDB006F06EA /* Resources */,
 				B4109914DF2393A9890BA191 /* [CP] Embed Pods Frameworks */,
 				925B12FB4CF6DF32DF205B8C /* [CP] Copy Pods Resources */,
@@ -483,6 +484,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D0AC91662073DB510073747E /* Create components Visual Reference */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create components Visual Reference";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/Scripts/ImagesDocumentation/CreateImagesDocumentation.rb -g https://github.com/simaoseica/components/blob/master -p ${SRCROOT} -t scripts/ImagesDocumentation/lib/images.html.erb -s ComponentSnapshotTests/Common/Images/Expected_64";
 		};
 		DF26D34B25F5F6254E8A4C17 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

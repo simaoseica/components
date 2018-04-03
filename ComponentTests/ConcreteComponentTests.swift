@@ -15,7 +15,7 @@ final class ConcreteComponentSnapshots: FBSnapshotTestCase {
     override func setUp() {
         super.setUp()
 
-        self.recordMode = true
+//        self.recordMode = true
         self.testName = String(describing: type(of: component))
         self.trimTestFromImageName = true
     }

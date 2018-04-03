@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Components components</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+      <ul>
+
+        <% @components.each do |component| %>
+
+          <li class="container">
+
+            <h1 data-toggle="collapse" data-target="#demo_<%= component[:name] %>"><%= component[:name] %></h1>
+
+            <div id="demo_<%= component[:name] %>" class="collapse">
+              <div style="display: flex">
+
+                <% component[:images].each do |image| %>
+                  <div style="padding-right: 20px; max-width: 250px">
+                    <div>
+                      <p align="center"><%= image[:name] %></p>
+                    </div>
+                    <a href="<%= component[:code_path] %>" target="blank">
+                      <img src="<%= image[:path] %>" style="border: 1px solid #ccc; border-radius: 5px" width="100%" height="auto">
+                    </a>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+        </li>
+
+
+
+        <% end %>
+      </ul>
+    </body>
+</html>

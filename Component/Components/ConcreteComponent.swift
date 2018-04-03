@@ -7,8 +7,24 @@ protocol ConcreteComponentDelegate: class {
 
 public final class ConcreteComponent: UIView {
 
-    fileprivate let myLabel: UILabel = UILabel()
-    fileprivate let myImageView: UIImageView = UIImageView()
+    fileprivate let myLabel: UILabel = {
+
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        return label
+    }()
+
+    fileprivate let myImageView: UIImageView = {
+
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        
+        image.translatesAutoresizingMaskIntoConstraints = false
+
+        return image
+    }()
 
     fileprivate let myButton: UIButton = {
 
@@ -57,10 +73,15 @@ fileprivate extension ConcreteComponent {
         NSLayoutConstraint.activate([
 
             self.myLabel.topAnchor.constraint(greaterThanOrEqualTo: self.topAnchor),
-            self.myLabel.leadingAnchor.constraint(greaterThanOrEqualTo: self.leadingAnchor),
-            self.myLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor),
-            self.myLabel.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor),
+            self.myLabel.leadingAnchor.constraint(greaterThanOrEqualTo: self.leadingAnchor, constant: 20),
+            self.myLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: -20),
+            self.myLabel.bottomAnchor.constraint(equalTo: self.myImageView.topAnchor, constant: -20),
+            self.myLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 
+            self.myImageView.bottomAnchor.constraint(lessThanOrEqualTo: self.myButton.topAnchor, constant: -20),
+            self.myImageView.widthAnchor.constraint(equalToConstant: 200),
+            self.myImageView.heightAnchor.constraint(equalToConstant: 200),
+            self.myImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 
             self.myButton.widthAnchor.constraint(equalToConstant: 100),
             self.myButton.heightAnchor.constraint(equalToConstant: 50),
@@ -72,8 +93,8 @@ fileprivate extension ConcreteComponent {
 extension ConcreteComponent: Component {
 
     public enum Configuration {
-        case state1
-        case state2
+        case male(UIImage, String)
+        case female(UIImage, String)
     }
 
     public func render(with configuration: Configuration) {
@@ -81,14 +102,26 @@ extension ConcreteComponent: Component {
         self.model = configuration
 
         switch configuration {
-        case .state1:
+        case let .male(image, title):
 
-            self.myButton.backgroundColor = .blue
-            self.backgroundColor = .green
-        case .state2:
-
-            self.myButton.backgroundColor = .green
+            self.myLabel.text = title
+            self.myButton.backgroundColor = .pink
+            self.myImageView.image = image
             self.backgroundColor = .blue
+        case let .female(image, title):
+
+            self.myLabel.text = title
+            self.myButton.backgroundColor = .blue
+            self.myImageView.image = image
+            self.backgroundColor = .pink
         }
     }
 }
+
+private extension UIColor {
+
+    static let pink: UIColor = UIColor(hex: 0xFF69B4)
+    static let blue: UIColor = UIColor(hex: 0x1E90FF)
+
+}
+

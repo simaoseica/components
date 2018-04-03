@@ -26,7 +26,7 @@ final public class ConcreteViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.component.render(with: .state1)
+        self.component.render(with: .female(#imageLiteral(resourceName: "skirt.jpg"), "Skirt"))
     }
 }
 
@@ -35,12 +35,12 @@ extension ConcreteViewController: ConcreteComponentDelegate {
     func didTap(button: UIButton, in component: ConcreteComponent) {
 
         switch component.model! {
-        case .state1:
+        case .male:
 
-            self.component.render(with: .state2)
-        case .state2:
+            self.component.render(with: .female(#imageLiteral(resourceName: "skirt.jpg"), "Skirt"))
+        case .female:
 
-            self.component.render(with: .state1)
+            self.component.render(with: .male(#imageLiteral(resourceName: "shorts.jpeg"), "Shorts"))
         }
     }
 }

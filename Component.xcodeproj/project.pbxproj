@@ -27,6 +27,7 @@
 		11D07D202073C982006F06EA /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 11D07D1F2073C982006F06EA /* Images */; };
 		11D07D232073CD0B006F06EA /* shorts.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 11D07D212073CD0B006F06EA /* shorts.jpeg */; };
 		11D07D242073CD0B006F06EA /* skirt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11D07D222073CD0B006F06EA /* skirt.jpg */; };
+		11D07D272073D160006F06EA /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07D262073D160006F06EA /* UIColor+Utils.swift */; };
 		6E598517C491D99234D12CEB /* Pods_Component.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F0FDEB6C72965CE7534B171 /* Pods_Component.framework */; };
 		CAC5DD27EA8F582F1FB0AF20 /* Pods_ComponentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623146C21CDA163160E9CBA6 /* Pods_ComponentTests.framework */; };
 		D98297E022A836AB1BDB5E45 /* Pods_ComponentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B43A8630DFE9CB902AD9C0 /* Pods_ComponentUITests.framework */; };
@@ -69,6 +70,7 @@
 		11D07D1F2073C982006F06EA /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		11D07D212073CD0B006F06EA /* shorts.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shorts.jpeg; sourceTree = "<group>"; };
 		11D07D222073CD0B006F06EA /* skirt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = skirt.jpg; sourceTree = "<group>"; };
+		11D07D262073D160006F06EA /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		1806469E74265281B78927AB /* Pods-ComponentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComponentTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComponentTests/Pods-ComponentTests.release.xcconfig"; sourceTree = "<group>"; };
 		623146C21CDA163160E9CBA6 /* Pods_ComponentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComponentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F0FDEB6C72965CE7534B171 /* Pods_Component.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Component.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 		11D07CD52073BCDB006F06EA /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				11D07D252073D13C006F06EA /* Utils */,
 				11D07CD62073BCDB006F06EA /* AppDelegate.swift */,
 				11D07D082073C0B4006F06EA /* Components */,
 				11D07D042073C0B4006F06EA /* DataSources */,
@@ -221,6 +224,14 @@
 				11D07D1F2073C982006F06EA /* Images */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		11D07D252073D13C006F06EA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				11D07D262073D160006F06EA /* UIColor+Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		CB1842F6EAEC7DC5D7A51F44 /* Pods */ = {
@@ -534,6 +545,7 @@
 				11D07D112073C0B4006F06EA /* ConcreteComponent.swift in Sources */,
 				11D07D0B2073C0B4006F06EA /* DataSource.swift in Sources */,
 				11D07D0E2073C0B4006F06EA /* ConcreteViewController.swift in Sources */,
+				11D07D272073D160006F06EA /* UIColor+Utils.swift in Sources */,
 				11D07CD72073BCDB006F06EA /* AppDelegate.swift in Sources */,
 				11D07D142073C0B4006F06EA /* Component.swift in Sources */,
 			);

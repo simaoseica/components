@@ -1,0 +1,35 @@
+PODS:
+  - iOSSnapshotTestCase (2.2.0):
+    - iOSSnapshotTestCase/SwiftSupport (= 2.2.0)
+  - iOSSnapshotTestCase/Core (2.2.0)
+  - iOSSnapshotTestCase/SwiftSupport (2.2.0):
+    - iOSSnapshotTestCase/Core
+  - Nimble (7.0.3)
+  - Quick (1.2.0)
+  - SwiftLint (0.25.0)
+
+DEPENDENCIES:
+  - iOSSnapshotTestCase (from `https://github.com/nunogoncalves/ios-snapshot-test-case.git`, branch `working-flexible-names`)
+  - Nimble (~> 7.0.3)
+  - Quick (~> 1.2.0)
+  - SwiftLint (~> 0.25.0)
+
+EXTERNAL SOURCES:
+  iOSSnapshotTestCase:
+    :branch: working-flexible-names
+    :git: https://github.com/nunogoncalves/ios-snapshot-test-case.git
+
+CHECKOUT OPTIONS:
+  iOSSnapshotTestCase:
+    :commit: def94f67ba7bb1615e87edc9aa65c4ef64957643
+    :git: https://github.com/nunogoncalves/ios-snapshot-test-case.git
+
+SPEC CHECKSUMS:
+  iOSSnapshotTestCase: e5355de922ab92a3727b24a6241c3aa8f5195cc3
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
+
+PODFILE CHECKSUM: 201287940842e199db322676db39c769ce2c4d20
+
+COCOAPODS: 1.4.0

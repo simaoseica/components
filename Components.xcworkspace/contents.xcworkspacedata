@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Components.xcworkspace/Components.playground">
+      location = "group:Component.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Components.xcworkspace/Projects/ios-snapshot-test-case/FBSnapshotTestCase.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

@@ -10,7 +10,7 @@
 		11D07CD72073BCDB006F06EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07CD62073BCDB006F06EA /* AppDelegate.swift */; };
 		11D07CDE2073BCDD006F06EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D07CDD2073BCDD006F06EA /* Assets.xcassets */; };
 		11D07CE12073BCDD006F06EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D07CDF2073BCDD006F06EA /* LaunchScreen.storyboard */; };
-		11D07CEC2073BCDD006F06EA /* ComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07CEB2073BCDD006F06EA /* ComponentTests.swift */; };
+		11D07CEC2073BCDD006F06EA /* ConcreteComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07CEB2073BCDD006F06EA /* ConcreteComponentTests.swift */; };
 		11D07CF72073BCDD006F06EA /* ComponentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07CF62073BCDD006F06EA /* ComponentUITests.swift */; };
 		11D07D0B2073C0B4006F06EA /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07D052073C0B4006F06EA /* DataSource.swift */; };
 		11D07D0C2073C0B4006F06EA /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07D052073C0B4006F06EA /* DataSource.swift */; };
@@ -58,7 +58,7 @@
 		11D07CE02073BCDD006F06EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11D07CE22073BCDD006F06EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11D07CE72073BCDD006F06EA /* ComponentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComponentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		11D07CEB2073BCDD006F06EA /* ComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTests.swift; sourceTree = "<group>"; };
+		11D07CEB2073BCDD006F06EA /* ConcreteComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteComponentTests.swift; sourceTree = "<group>"; };
 		11D07CED2073BCDD006F06EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11D07CF22073BCDD006F06EA /* ComponentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComponentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D07CF62073BCDD006F06EA /* ComponentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentUITests.swift; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 		11D07CEA2073BCDD006F06EA /* ComponentTests */ = {
 			isa = PBXGroup;
 			children = (
-				11D07CEB2073BCDD006F06EA /* ComponentTests.swift */,
+				11D07CEB2073BCDD006F06EA /* ConcreteComponentTests.swift */,
 				11D07CED2073BCDD006F06EA /* Info.plist */,
 			);
 			path = ComponentTests;
@@ -257,6 +257,7 @@
 				F9A9FDFD2ED5D7B96274987E /* [CP] Check Pods Manifest.lock */,
 				11D07CCF2073BCDB006F06EA /* Sources */,
 				11D07CD02073BCDB006F06EA /* Frameworks */,
+				D0AC91662073DB510073747E /* Create components Visual Reference */,
 				11D07CD12073BCDB006F06EA /* Resources */,
 				B4109914DF2393A9890BA191 /* [CP] Embed Pods Frameworks */,
 				925B12FB4CF6DF32DF205B8C /* [CP] Copy Pods Resources */,
@@ -484,6 +485,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D0AC91662073DB510073747E /* Create components Visual Reference */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create components Visual Reference";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/Scripts/ImagesDocumentation/CreateImagesDocumentation.rb -g https://github.com/simaoseica/components/blob/master -p ${SRCROOT} -t scripts/ImagesDocumentation/lib/images.html.erb -s ComponentSnapshotTests/Common/Images/Expected_64";
+		};
 		DF26D34B25F5F6254E8A4C17 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -558,7 +573,7 @@
 				11D07D122073C0B4006F06EA /* ConcreteComponent.swift in Sources */,
 				11D07D0C2073C0B4006F06EA /* DataSource.swift in Sources */,
 				11D07D0F2073C0B4006F06EA /* ConcreteViewController.swift in Sources */,
-				11D07CEC2073BCDD006F06EA /* ComponentTests.swift in Sources */,
+				11D07CEC2073BCDD006F06EA /* ConcreteComponentTests.swift in Sources */,
 				11D07D152073C0B4006F06EA /* Component.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

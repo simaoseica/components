@@ -2,7 +2,7 @@ import UIKit
 
 protocol ConcreteComponentDelegate: class {
 
-    func didTap(button: UIButton, in component: ConcreteComponent)
+    func didTapButton(with currentConfiguration: ConcreteComponent.Configuration, in component: ConcreteComponent)
 }
 
 public final class ConcreteComponent: UIView {
@@ -55,7 +55,7 @@ public final class ConcreteComponent: UIView {
     @objc
     func performAction(sender: UIButton) {
 
-        self.delegate?.didTap(button: sender, in: self)
+        self.delegate?.didTapButton(with: self.model!, in: self)
     }
 }
 
@@ -122,6 +122,5 @@ private extension UIColor {
 
     static let pink: UIColor = UIColor(hex: 0xFF69B4)
     static let blue: UIColor = UIColor(hex: 0x1E90FF)
-
 }
 

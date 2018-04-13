@@ -10,7 +10,7 @@ final public class ConcreteViewController: UIViewController {
 
         super.init(nibName: nil, bundle: nil)
         self.component.delegate = self
-        // self.dataSource.delegate = self
+        self.dataSource.delegate = self
     }
 
     @available(*, unavailable)
@@ -32,15 +32,16 @@ final public class ConcreteViewController: UIViewController {
 
 extension ConcreteViewController: ConcreteComponentDelegate {
 
-    func didTap(button: UIButton, in component: ConcreteComponent) {
+    func didTapButton(with currentConfiguration: ConcreteComponent.Configuration, in component: ConcreteComponent) {
 
-        switch component.model! {
-        case .male:
+        self.dataSource.requestNextConfiguration(after: currentConfiguration)
+    }
+}
 
-            self.component.render(with: .female(#imageLiteral(resourceName: "skirt.jpg"), "Skirt"))
-        case .female:
+extension ConcreteViewController: DataSourceDeletage {
 
-            self.component.render(with: .male(#imageLiteral(resourceName: "shorts.jpeg"), "Shorts"))
-        }
+    func has(newConfiguration: ConcreteComponent.Configuration, in dataSource: DataSource) {
+
+        self.component.render(with: newConfiguration)
     }
 }

@@ -10,7 +10,7 @@ inhibit_all_warnings!
 
 target 'Component' do
 
-  pod 'SwiftLint', '~> 0.25.0'
+  pod 'SwiftLint', '~> 0.25'
 
 
   target 'ComponentUITests' do
@@ -20,8 +20,8 @@ target 'Component' do
   target 'ComponentTests' do
     inherit! :search_paths
 
-    pod 'Quick', '~> 1.2.0'
-    pod 'Nimble', '~> 7.0.3'
+    pod 'Quick', '~> 1.3'
+    pod 'Nimble', '~> 7.1'
     # pod 'iOSSnapshotTestCase', '~> 2.1.6'
     # pod 'iOSSnapshotTestCase', path: '../ExternalForks/ios-snapshot-test-case/'
     # until we don't have an official version from uber we can use ours.

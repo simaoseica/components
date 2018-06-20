@@ -1,23 +1,6 @@
-
-fastlane_version "2.35.1"
-
 default_platform :ios
 
 platform :ios do
-  before_all do
-
-    version = ENV["REQUIRED_XCODE_VERSION"].dup || '9.4'
-
-    xcversion(version: version.prepend("~> "))
-
-    if File.exist?("../Podfile")
-
-      cocoapods(
-        clean: true,
-        use_bundle_exec: true
-      )
-    end
-  end
 
   desc "Runs all the tests"
   lane :test do |options|
@@ -26,14 +9,12 @@ platform :ios do
   end
 
   desc "Build new build for development"
-  desc "This will also make sure the profile is up to date"
   lane :development do |options|
 
     build(scheme: options[:scheme])
   end
 
   desc "Submit a new Ad-Hoc Build to Crashlytics"
-  desc "This will also make sure the profile is up to date"
   lane :adhoc do |options|
 
     bump_version_number
@@ -99,15 +80,6 @@ platform :ios do
       groups: ENV["CRASHLYTICS_GROUPS"],
       notes_path: notes_path
     )
-
-  end
-
-  after_all do |lane|
-    # This block is called, only if the executed lane was successful
-
-  end
-
-  error do |lane, exception|
 
   end
 end

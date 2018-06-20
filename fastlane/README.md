@@ -20,21 +20,17 @@ or alternatively using `brew cask install fastlane`
 ```
 fastlane ios test
 ```
-Runs all the tests
+Run all the tests
 ### ios development
 ```
 fastlane ios development
 ```
 Build new build for development
-
-This will also make sure the profile is up to date
 ### ios adhoc
 ```
 fastlane ios adhoc
 ```
 Submit a new Ad-Hoc Build to Crashlytics
-
-This will also make sure the profile is up to date
 ### ios release
 ```
 fastlane ios release

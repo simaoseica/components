@@ -1,17 +1,21 @@
 # Sources configuration
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://cdn.cocoapods.org/'
 
 workspace 'Components'
 
-platform :ios, '11.0'
-use_frameworks!
+platform :ios, '13.0'
+supports_swift_versions '>= 5.0'
 
+install! 'cocoapods',
+    :generate_multiple_pod_projects => true,
+    :incremental_installation => true
+
+use_frameworks!
 inhibit_all_warnings!
 
 target 'Component' do
 
-  pod 'SwiftLint', '~> 0.25'
-
+  pod 'SwiftLint'
 
   target 'ComponentUITests' do
      inherit! :search_paths
@@ -20,11 +24,8 @@ target 'Component' do
   target 'ComponentTests' do
     inherit! :search_paths
 
-    pod 'Quick', '~> 1.3'
-    pod 'Nimble', '~> 7.1'
-    # pod 'iOSSnapshotTestCase', '~> 2.1.6'
-    # pod 'iOSSnapshotTestCase', path: '../ExternalForks/ios-snapshot-test-case/'
-    # until we don't have an official version from uber we can use ours.
-    pod 'iOSSnapshotTestCase', git: 'https://github.com/nunogoncalves/ios-snapshot-test-case.git', branch: 'working-flexible-names'
+    pod 'Quick', '~> 2.1'
+    pod 'Nimble', '~> 8.0'
+    pod 'iOSSnapshotTestCase', '~> 6.2.0'
   end
 end

@@ -2,10 +2,17 @@ default_platform :ios
 
 platform :ios do
 
-  desc "Runs all the tests"
+  before_all do
+
+    if File.exist?("../Podfile")
+      cocoapods(clean: true, use_bundle_exec: true)
+    end
+  end
+
+  desc "Run all the tests"
   lane :test do |options|
 
-    scan(scheme: options[:scheme], xcargs: "analyze")
+    scan(scheme: options[:scheme], xcargs: "analyze -only-testing:ComponentTests -only-testing:ComponentUITests")
   end
 
   desc "Build new build for development"

@@ -1,4 +1,4 @@
-devices ["iPhone 7"]
+devices ["iPhone 11"]
 
 clean true
 code_coverage true

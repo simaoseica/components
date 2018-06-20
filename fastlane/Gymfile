@@ -1,0 +1,4 @@
+clean true
+
+output_directory "./build"
+output_name "Components"

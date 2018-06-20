@@ -1,0 +1,113 @@
+
+fastlane_version "2.35.1"
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+
+    version = ENV["REQUIRED_XCODE_VERSION"].dup || '9.4'
+
+    xcversion(version: version.prepend("~> "))
+
+    if File.exist?("../Podfile")
+
+      cocoapods(
+        clean: true,
+        use_bundle_exec: true
+      )
+    end
+  end
+
+  desc "Runs all the tests"
+  lane :test do |options|
+
+    scan(scheme: options[:scheme], xcargs: "analyze")
+  end
+
+  desc "Build new build for development"
+  desc "This will also make sure the profile is up to date"
+  lane :development do |options|
+
+    build(scheme: options[:scheme])
+  end
+
+  desc "Submit a new Ad-Hoc Build to Crashlytics"
+  desc "This will also make sure the profile is up to date"
+  lane :adhoc do |options|
+
+    bump_version_number
+    build(scheme: options[:scheme])
+    crashlytics_upload
+  end
+
+  desc "Deploy a new version to the App Store"
+  lane :release do |options|
+
+    # snapshot
+    build(scheme: options[:scheme])
+
+    deliver(
+      force: true,
+      # skip_binary_upload: true,
+      skip_screenshots: true,
+      skip_metadata: true
+    )
+    # frameit
+  end
+
+  # Private lanes
+
+  private_lane :build do |options|
+
+    match # more information: https://codesigning.guide
+
+    disable_automatic_code_signing(path: ENV["XCODE_PROJECT"])
+
+    gym(
+      scheme: options[:scheme],
+      export_options: options[:export_options]
+    ) # Build your app - more options available
+
+    enable_automatic_code_signing(path: ENV["XCODE_PROJECT"])
+  end
+
+  private_lane :crashlytics_upload do
+
+    if ENV["NOTES_PATH"]
+
+      notes_path = ENV["NOTES_PATH"]
+    else
+
+      # Current branch name, fastlane action
+      branch_name = git_branch
+
+      # First paragraph noting what kind of build this is
+      build_notes_header = "Build from branch #{ branch_name }, ##{ ENV["BUILD_NUMBER"] } of build configuration \"#{ ENV["TEAMCITY_BUILDCONF_NAME"] }\"."
+
+      # Log the last 10 commits into file build_notes in a tree
+      git_log = sh("git log -n 10 --graph --pretty=format:'%h %s' --abbrev-commit --date=relative")
+
+      build_notes = [build_notes_header, git_log].join("\n\n")
+
+      notes_path = Helper::CrashlyticsHelper.write_to_tempfile(build_notes, 'notes_path').path
+    end
+
+    crashlytics(
+      api_token: ENV["CRASHLYTICS_API_TOKEN"],
+      build_secret: ENV["CRASHLYTICS_BUILD_SECRET"],
+      groups: ENV["CRASHLYTICS_GROUPS"],
+      notes_path: notes_path
+    )
+
+  end
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+
+  end
+
+  error do |lane, exception|
+
+  end
+end

@@ -1,0 +1,4 @@
+devices ["iPhone 7"]
+
+clean true
+code_coverage true

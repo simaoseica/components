@@ -1,0 +1,10 @@
+
+username "simaoseica@gmail.com"
+# ipa "Shopfloor.ipa"
+
+price_tier 0
+
+submit_for_review false
+automatic_release false
+
+copyright "#{Time.now.year} Farfetch UK Limited"

@@ -28,6 +28,8 @@
 		11D07D232073CD0B006F06EA /* shorts.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 11D07D212073CD0B006F06EA /* shorts.jpeg */; };
 		11D07D242073CD0B006F06EA /* skirt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11D07D222073CD0B006F06EA /* skirt.jpg */; };
 		11D07D272073D160006F06EA /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07D262073D160006F06EA /* UIColor+Utils.swift */; };
+		11E313DA20DB010600E72E91 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07D262073D160006F06EA /* UIColor+Utils.swift */; };
+		11E313DB20DB010800E72E91 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07D262073D160006F06EA /* UIColor+Utils.swift */; };
 		6E598517C491D99234D12CEB /* Pods_Component.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F0FDEB6C72965CE7534B171 /* Pods_Component.framework */; };
 		CAC5DD27EA8F582F1FB0AF20 /* Pods_ComponentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623146C21CDA163160E9CBA6 /* Pods_ComponentTests.framework */; };
 		D98297E022A836AB1BDB5E45 /* Pods_ComponentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B43A8630DFE9CB902AD9C0 /* Pods_ComponentUITests.framework */; };
@@ -573,6 +575,7 @@
 				11D07D122073C0B4006F06EA /* ConcreteComponent.swift in Sources */,
 				11D07D0C2073C0B4006F06EA /* DataSource.swift in Sources */,
 				11D07D0F2073C0B4006F06EA /* ConcreteViewController.swift in Sources */,
+				11E313DA20DB010600E72E91 /* UIColor+Utils.swift in Sources */,
 				11D07CEC2073BCDD006F06EA /* ConcreteComponentTests.swift in Sources */,
 				11D07D152073C0B4006F06EA /* Component.swift in Sources */,
 			);
@@ -585,6 +588,7 @@
 				11D07D132073C0B4006F06EA /* ConcreteComponent.swift in Sources */,
 				11D07D0D2073C0B4006F06EA /* DataSource.swift in Sources */,
 				11D07D102073C0B4006F06EA /* ConcreteViewController.swift in Sources */,
+				11E313DB20DB010800E72E91 /* UIColor+Utils.swift in Sources */,
 				11D07CF72073BCDD006F06EA /* ComponentUITests.swift in Sources */,
 				11D07D162073C0B4006F06EA /* Component.swift in Sources */,
 			);

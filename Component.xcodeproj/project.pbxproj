@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		116F7A0F20E158CC00C1BD9F /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116F7A0E20E158CC00C1BD9F /* Presenter.swift */; };
 		11D07CD72073BCDB006F06EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D07CD62073BCDB006F06EA /* AppDelegate.swift */; };
 		11D07CDE2073BCDD006F06EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D07CDD2073BCDD006F06EA /* Assets.xcassets */; };
 		11D07CE12073BCDD006F06EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D07CDF2073BCDD006F06EA /* LaunchScreen.storyboard */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		0BC55131E445EC14D199407D /* Pods-Component.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Component.release.xcconfig"; path = "Pods/Target Support Files/Pods-Component/Pods-Component.release.xcconfig"; sourceTree = "<group>"; };
+		116F7A0E20E158CC00C1BD9F /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		11D07CD32073BCDB006F06EA /* Component.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Component.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D07CD62073BCDB006F06EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D07CDD2073BCDD006F06EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				11D07D052073C0B4006F06EA /* DataSource.swift */,
+				116F7A0E20E158CC00C1BD9F /* Presenter.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11D07D112073C0B4006F06EA /* ConcreteComponent.swift in Sources */,
+				116F7A0F20E158CC00C1BD9F /* Presenter.swift in Sources */,
 				11D07D0B2073C0B4006F06EA /* DataSource.swift in Sources */,
 				11D07D0E2073C0B4006F06EA /* ConcreteViewController.swift in Sources */,
 				11D07D272073D160006F06EA /* UIColor+Utils.swift in Sources */,

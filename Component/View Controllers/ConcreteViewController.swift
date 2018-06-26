@@ -2,15 +2,11 @@ import UIKit
 
 final public class ConcreteViewController: UIViewController {
 
-    fileprivate let component = ConcreteComponent()
-
-    fileprivate let dataSource = DataSource()
+    fileprivate let presenter = Presenter()
 
     public init() {
 
         super.init(nibName: nil, bundle: nil)
-        self.component.delegate = self
-        self.dataSource.delegate = self
     }
 
     @available(*, unavailable)
@@ -20,28 +16,12 @@ final public class ConcreteViewController: UIViewController {
 
     public override func loadView() {
 
-        self.view = self.component
+        self.view = self.presenter.component
     }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.component.render(with: .female(#imageLiteral(resourceName: "skirt.jpg"), "Skirt"))
-    }
-}
-
-extension ConcreteViewController: ConcreteComponentDelegate {
-
-    func didTapButton(with currentConfiguration: ConcreteComponent.Configuration, in component: ConcreteComponent) {
-
-        self.dataSource.requestNextConfiguration(after: currentConfiguration)
-    }
-}
-
-extension ConcreteViewController: DataSourceDeletage {
-
-    func has(newConfiguration: ConcreteComponent.Configuration, in dataSource: DataSource) {
-
-        self.component.render(with: newConfiguration)
+        self.presenter.updateUI()
     }
 }

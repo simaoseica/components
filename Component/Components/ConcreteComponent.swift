@@ -92,27 +92,22 @@ fileprivate extension ConcreteComponent {
 
 extension ConcreteComponent: Component {
 
-    public enum Configuration {
-        case male(UIImage, String)
-        case female(UIImage, String)
-    }
-
-    public func render(with configuration: Configuration) {
+    public func render(with configuration: Presenter.Configuration) {
 
         self.model = configuration
 
         switch configuration {
-        case let .male(image, title):
+        case let .male(imageName, title):
 
             self.myLabel.text = title
             self.myButton.backgroundColor = .pink
-            self.myImageView.image = image
+            self.myImageView.image = UIImage(named: imageName)
             self.backgroundColor = .blue
-        case let .female(image, title):
+        case let .female(imageName, title):
 
             self.myLabel.text = title
             self.myButton.backgroundColor = .blue
-            self.myImageView.image = image
+            self.myImageView.image = UIImage(named: imageName)
             self.backgroundColor = .pink
         }
     }

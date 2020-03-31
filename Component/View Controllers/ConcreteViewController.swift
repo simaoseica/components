@@ -26,13 +26,13 @@ final public class ConcreteViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.component.render(with: .female(#imageLiteral(resourceName: "skirt.jpg"), "Skirt"))
+        self.component.render(with: .female("skirt.jpg", "Skirt"))
     }
 }
 
 extension ConcreteViewController: ConcreteComponentDelegate {
 
-    func didTapButton(with currentConfiguration: ConcreteComponent.Configuration, in component: ConcreteComponent) {
+    func didTapButton(with currentConfiguration: ConcreteComponent.State, in component: ConcreteComponent) {
 
         self.dataSource.requestNextConfiguration(after: currentConfiguration)
     }
@@ -40,7 +40,7 @@ extension ConcreteViewController: ConcreteComponentDelegate {
 
 extension ConcreteViewController: DataSourceDeletage {
 
-    func has(newConfiguration: ConcreteComponent.Configuration, in dataSource: DataSource) {
+    func has(newConfiguration: ConcreteComponent.State, in dataSource: DataSource) {
 
         self.component.render(with: newConfiguration)
     }

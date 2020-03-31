@@ -15,54 +15,54 @@ final class ConcreteComponentSnapshots: FBSnapshotTestCase {
     override func setUp() {
         super.setUp()
 
-//        self.recordMode = true
-        self.testName = String(describing: type(of: component))
-        self.trimTestFromImageName = true
+        self.recordMode = false
+        self.folderName = String(describing: ConcreteComponent.self)
     }
 
     func testMale() {
 
-        component.render(with: .male(#imageLiteral(resourceName: "shorts.jpeg"), "Shorts"))
+        component.render(with: .male("shorts.jpeg", "Shorts"))
 
         component.frame = CGRect(x: 0, y: 0, width: 375, height: 667)
 
-        FBSnapshotVerifyView(component)
+
+        FBSnapshotVerifyView(self.component)
     }
 
     func testFemale() {
 
-        component.render(with: .female(#imageLiteral(resourceName: "shorts.jpeg"), "Skirt"))
+        component.render(with: .female("shorts.jpeg", "Skirt"))
 
         component.frame = CGRect(x: 0, y: 0, width: 375, height: 667)
 
-        FBSnapshotVerifyView(component)
+        FBSnapshotVerifyView(self.component)
     }
 
     func testScreenSize() {
 
-        component.render(with: .female(#imageLiteral(resourceName: "shorts.jpeg"), "Skirt"))
+        component.render(with: .female("shorts.jpeg", "Skirt"))
 
         component.frame = CGRect(x: 0, y: 0, width: 375, height: 667)
 
-        FBSnapshotVerifyView(component)
+        FBSnapshotVerifyView(self.component)
     }
 
 
     func testYuge() {
 
-        component.render(with: .male(#imageLiteral(resourceName: "shorts.jpeg"), "Shorts"))
+        component.render(with: .male("shorts.jpeg", "Shorts"))
 
         component.frame = CGRect(x: 0, y: 0, width: 1000, height: 2000)
 
-        FBSnapshotVerifyView(component)
+        FBSnapshotVerifyView(self.component)
     }
 
     func testTiny() {
 
-        component.render(with: .male(#imageLiteral(resourceName: "shorts.jpeg"), "Shorts"))
+        component.render(with: .male("shorts.jpeg", "Shorts"))
 
         component.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
 
-        FBSnapshotVerifyView(component)
+        FBSnapshotVerifyView(self.component)
     }
 }

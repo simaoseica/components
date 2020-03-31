@@ -2,7 +2,7 @@ import UIKit
 
 protocol ConcreteComponentDelegate: class {
 
-    func didTapButton(with currentConfiguration: ConcreteComponent.Configuration, in component: ConcreteComponent)
+    func didTapButton(with currentConfiguration: ConcreteComponent.State, in component: ConcreteComponent)
 }
 
 public final class ConcreteComponent: UIView {
@@ -36,7 +36,7 @@ public final class ConcreteComponent: UIView {
         return button
     }()
 
-    fileprivate (set) var model: Configuration?
+    fileprivate (set) var model: State?
 
     weak var delegate: ConcreteComponentDelegate?
 
@@ -92,27 +92,27 @@ fileprivate extension ConcreteComponent {
 
 extension ConcreteComponent: Component {
 
-    public enum Configuration {
-        case male(UIImage, String)
-        case female(UIImage, String)
+    public enum State {
+        case male(String, String)
+        case female(String, String)
     }
 
-    public func render(with configuration: Configuration) {
+    public func render(with configuration: State) {
 
         self.model = configuration
 
         switch configuration {
-        case let .male(image, title):
+        case let .male(imageName, title):
 
             self.myLabel.text = title
             self.myButton.backgroundColor = .pink
-            self.myImageView.image = image
+            self.myImageView.image = UIImage(named: imageName)
             self.backgroundColor = .blue
-        case let .female(image, title):
+        case let .female(imageName, title):
 
             self.myLabel.text = title
             self.myButton.backgroundColor = .blue
-            self.myImageView.image = image
+            self.myImageView.image = UIImage(named: imageName)
             self.backgroundColor = .pink
         }
     }

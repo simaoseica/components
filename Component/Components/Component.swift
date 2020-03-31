@@ -2,7 +2,7 @@ import Foundation
 
 public protocol Component: class {
 
-    associatedtype Configuration
+    associatedtype State
 
-    func render(with configuration: Configuration)
+    func render(with configuration: State)
 }

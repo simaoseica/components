@@ -27,6 +27,15 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "11D07CD22073BCDB006F06EA"
+            BuildableName = "Component.app"
+            BlueprintName = "Component"
+            ReferencedContainer = "container:Component.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -49,17 +58,6 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "11D07CD22073BCDB006F06EA"
-            BuildableName = "Component.app"
-            BlueprintName = "Component"
-            ReferencedContainer = "container:Component.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -84,17 +82,15 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "FB_REFERENCE_IMAGE_DIR"
-            value = "$(SOURCE_ROOT)/$(PROJECT_NAME)SnapshotTests/Common/Images/Expected"
+            value = "$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/Snapshots/Images/Expected"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "IMAGE_DIFF_DIR"
-            value = "$(SOURCE_ROOT)/$(PROJECT_NAME)SnapshotTests/Common/Images/FailureDiffs"
+            value = "$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/Snapshots/Images/FailureDiffs"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

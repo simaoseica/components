@@ -8,7 +8,6 @@
 # Icon must end with two \r
 Icon
 
-
 # Thumbnails
 ._*
 
@@ -22,7 +21,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-
 
 ### Xcode ###
 build/
@@ -40,18 +38,10 @@ xcuserdata
 *.moved-aside
 DerivedData
 *.xcuserstate
+Index/
 
 ### AppCode ###
 .idea
-
-### Vim ###
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
-*.un~
-Session.vim
-.netrwhist
-*~
-
 
 ### Objective-C ###
 # Xcode
@@ -98,6 +88,7 @@ fastlane/report.xml
 fastlane/screenshots
 fastlane/test_output
 fastlane/reports/coverage
+fastlane/metadata/*/release_notes.txt
 .gutter.json
 .rvmrc
 
@@ -106,5 +97,22 @@ fastlane/reports/coverage
 *.p12
 
 ## Auto Generated files by node.js
-scripts/apns/node_modules
-scripts/apns/package-lock.json
+node_modules
+package-lock.json
+
+## iOSSnapshotTestCase
+ComponentTests/Snapshots/Images/FailureDiffs
+
+## Git merge
+*.orig
+
+# Swift Package Manager
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.pins
+# Package.resolved
+.build/
+.swiftpm/
+
+## Firebase
+firebase-debug.log

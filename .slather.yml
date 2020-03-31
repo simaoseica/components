@@ -1,0 +1,13 @@
+# .slather.yml
+
+configuration: Debug
+xcodeproj: Component.xcodeproj
+workspace: Components.xcworkspace
+scheme: Component
+source_directory: Component
+output_directory: fastlane/reports/coverage/slather
+decimals: 2
+ignore:
+  - ComponentTests/*
+  - Pods/*
+  - fastlane

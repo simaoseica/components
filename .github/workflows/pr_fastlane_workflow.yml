@@ -1,0 +1,19 @@
+name: Pull Request
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  deploy:
+    name: Deploying to Testflight
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+      - name: Install gems
+        run: bundle install
+      - name: Pod repo update
+        run: bundle exec pod repo update
+      - name: Publishing app
+        if: success()
+        run: bundle exec fastlane test

@@ -24,8 +24,8 @@ target 'Component' do
   target 'ComponentTests' do
     inherit! :search_paths
 
-    pod 'Quick', '~> 2.1'
-    pod 'Nimble', '~> 8.0'
-    pod 'iOSSnapshotTestCase', '~> 6.2.0'
+    pod 'Quick'
+    pod 'Nimble'
+    pod 'iOSSnapshotTestCase'
   end
 end

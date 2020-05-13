@@ -5,7 +5,7 @@ on:
       - master
 jobs:
   deploy:
-    name: Deploying to Testflight
+    name: Testing Components
     runs-on: macOS-latest
     steps:
       - name: Checkout repository
@@ -14,6 +14,8 @@ jobs:
         run: bundle install
       - name: Pod repo update
         run: bundle exec pod repo update
-      - name: Publishing app
+      - name: Select XCode 11.4
+        run: sudo xcode-select -switch /Applications/Xcode_11.4.app
+      - name: Unit tests
         if: success()
         run: bundle exec fastlane test
